@@ -3,9 +3,9 @@
     <div class="container text-center">
       <p>&copy; 2025 E-Mart. All Rights Reserved.</p>
       <ul class="list-inline">
-        <li class="list-inline-item"><a href="#" class="text-white">Privacy Policy</a></li>
-        <li class="list-inline-item"><a href="#" class="text-white">Terms of Service</a></li>
-        <li class="list-inline-item"><a href="#" class="text-white">Contact Us</a></li>
+        <router-link rel="stylesheet" to="privacy-policy"><li class="list-inline-item"><a href="#" class="text-white">Privacy Policy</a></li></router-link>
+        <!-- <li class="list-inline-item"><a href="#" class="text-white">Terms of Service</a></li>
+        <li class="list-inline-item"><a href="#" class="text-white">Contact Us</a></li> -->
       </ul>
     </div>
   </footer>

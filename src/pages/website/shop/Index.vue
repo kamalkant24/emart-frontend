@@ -10,7 +10,7 @@
     </section>
 
     <!-- Filters Section -->
-    <section class="filters-section py-4">
+    <section class="filters-section py-4" v-if="products.length  >= 2">
         <div class="container">
             <div class="row">
                 <h4>Filter by Price</h4>

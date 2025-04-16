@@ -86,7 +86,11 @@ export default {
           showToast("error", "Invalid login details");
         }
       } catch (error) {
-        showToast("error", "Login failed");
+        if (error.response && error.response.status === 403) {
+          showToast("error", error.response.data.message);
+        } else {
+          showToast("error", "Login failed");
+        }
         console.error("Login error:", error);
       }
     };

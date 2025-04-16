@@ -1,33 +1,16 @@
 <template>
 <div class="categories-page">
-    <!-- Category Section -->
-    <section id="carouselSection" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-        <div class="carousel-inner">
-            <!-- Carousel Item 1 -->
-            <div class="carousel-item active">
-                <img src="@/assets/img2.webp" class="d-block w-100" alt="Promo Image 1">
-                
-            </div>
-            <!-- Carousel Item 2 -->
-            <div class="carousel-item">
-                <img src="@/assets/img2.webp" class="d-block w-100" alt="Promo Image 2">
-                
-            </div>
-            <!-- Carousel Item 3 -->
-            <div class="carousel-item">
-                <img src="@/assets/img1.webp" class="d-block w-100" alt="Promo Image 3">
-                
-            </div>
+    <section class="relative w-full h-[400px] md:h-[250px] flex items-center justify-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
+        <div class="text-center max-w-2xl px-6">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Explore Our Categories</h1>
+        <p class="text-lg md:text-xl mb-6 opacity-80">Find exactly what you need from our wide range of categories.</p>
+        
+        <router-link 
+            to="/shop" 
+            class="inline-block bg-white text-indigo-600 font-semibold py-3 px-6 rounded-full shadow-md transition-all duration-300 hover:bg-indigo-100 hover:scale-105">
+            Start Shopping
+        </router-link>
         </div>
-        <!-- Carousel Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSection" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselSection" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </section>
 
     <!-- Filters and Search Section -->
@@ -106,7 +89,7 @@ import {ref,onMounted} from 'vue';
 import {getImageUrl,useDebouncedFunction} from '@/utils/Helper';
 import {useRoute,useRouter} from 'vue-router';
 import apiClient from '@/service/Index';
-import showToast from "@/plugins/toast.js";
+// import showToast from "@/plugins/toast.js";
 export default {
     name: 'SubCategories',
     setup() {
@@ -126,7 +109,7 @@ export default {
                 if (responseSubCategories.data.success) {
                     subCategories.value = responseSubCategories.data.subcategory;
                     SubCategoriesFilters.value =  responseSubCategories.data.subcategory;
-                    showToast("success", "Sub categories found successfully.");
+                    // showToast("success", "Sub categories found successfully.");
                     loading.value = false;
                 }
                 else {
@@ -212,4 +195,18 @@ export default {
 
 <style scoped>
 @import '@/assets/website/categories.css';
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out;
+}
 </style>

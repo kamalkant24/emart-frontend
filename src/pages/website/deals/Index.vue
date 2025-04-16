@@ -5,7 +5,8 @@
         <div class="container">
             <h1 class="display-4 fw-bold text-white">Exclusive Deals & Discounts</h1>
             <p class="lead text-white mb-4">Shop now to grab the best offers and limited-time deals on top products!</p>
-            <button class="btn btn-deal btn-lg">Shop Now</button>
+            <router-link to="/shop" class="btn btn-deal btn-lg">Shop Now</router-link>
+            <!-- <button class="btn btn-deal btn-lg">Shop Now</button> -->
         </div>
     </section>
     <div class="loader">

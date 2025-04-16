@@ -2,25 +2,25 @@
 <AdminLayout>
     <div class="row">
         <div class="col-md-3">
-            <div class="card shadow-sm p-3 total-sale">
+            <div class="shadow-sm p-3 total-sale">
                 <h5 class="total-u">Total users</h5>
                 <p class="number">{{ totalUsers || 0 }}</p>
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card shadow-sm p-3 total-sale">
+            <div class="shadow-sm p-3 total-sale">
                 <h5 class="total-u">Today registered</h5>
                 <p class="number">{{ todayUsers || 0 }}</p>
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card shadow-sm p-3 total-sale">
+            <div class="shadow-sm p-3 total-sale">
                 <h5  class="total-u">Today Sale</h5>
                 <p  class="number">$1234</p>
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card shadow-sm p-3 total-sale">
+            <div class="shadow-sm p-3 total-sale">
                 <h5  class="total-u">Total Revenue</h5>
                 <p  class="number">$1234</p>
             </div>
@@ -29,12 +29,12 @@
 
     <div class="row mt-4">
         <div class="col-md-6">
-            <div class="card shadow-sm p-3">
+            <div class="shadow-sm p-3">
                 <h5>Worldwide Sales</h5>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="card shadow-sm p-3">
+            <div class="shadow-sm p-3">
                 <h5>Sales & Revenue</h5>
             </div>
         </div>
@@ -42,7 +42,7 @@
 
     <div class="row mt-4">
         <div class="col-md-12">
-            <div class="card shadow-sm p-3">
+            <div class="shadow-sm p-3">
                 <h5>Recent Sales</h5>
                 <table class="table">
                     <thead>
@@ -82,6 +82,7 @@ const todayUsers = ref(0);
 const users = async () => {
     try {
         const response = await apiClient.get('/users');
+
         if(response?.data){
             totalUsers.value = response.data.totalCount;
             todayUsers.value = response.data?.todayCount;
@@ -91,6 +92,7 @@ const users = async () => {
         console.log('server error',error);
     }
 }
+
 onMounted(() => {
     users();
 })

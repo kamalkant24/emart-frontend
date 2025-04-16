@@ -1,44 +1,22 @@
 <template>
 <div class="shop-page">
     <!-- Hero Section -->
-    <section id="carouselSection" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-        <div class="carousel-inner">
-            <!-- Carousel Item 1 -->
-            <div class="carousel-item active">
-                <img src="@/assets/img2.webp" class="d-block w-100" alt="Promo Image 1">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Big Sale on All Products</h5>
-                    <p>Hurry up! Limited time offers on all categories.</p>
-                </div>
-            </div>
-            <!-- Carousel Item 2 -->
-            <div class="carousel-item">
-                <img src="@/assets/img2.webp" class="d-block w-100" alt="Promo Image 2">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Electronics Sale</h5>
-                    <p>Get the best deals on top electronics.</p>
-                </div>
-            </div>
-            <!-- Carousel Item 3 -->
-            <div class="carousel-item">
-                <img src="@/assets/img1.webp" class="d-block w-100" alt="Promo Image 3">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>New Collection of Fashion</h5>
-                    <p>Explore the latest fashion trends at amazing prices.</p>
-                </div>
-            </div>
-        </div>
-        <!-- Carousel Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSection" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselSection" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </section>
+    <section class="relative bg-cover bg-center min-h-[250px] md:min-h-[250px] lg:min-h-[250px] flex items-center justify-center text-center text-white px-4">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
+        <div class="relative z-10 w-full max-w-4xl">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+            Explore Our Categories
+        </h1>
+        <p class="text-base sm:text-lg md:text-xl mb-6 max-w-2xl mx-auto">
+            Discover a wide variety of categories to find exactly what you need.
+        </p>
+        <router-link to="/shop"
+            class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 sm:px-6 py-2 sm:py-3 rounded-lg shadow-lg transition duration-300 text-sm sm:text-base">
+            Explore More
+        </router-link>
+        </div>
+    </section>
     <!-- Filters Section -->
     <section class="filters-section py-4">
         <div class="container">
@@ -124,10 +102,6 @@ import { useStore } from 'vuex';
 import Slider from "@vueform/slider";
 import showToast from "@/plugins/toast.js";
 const wishlist = reactive(new Set());
-// export default {
-//     name: 'Index',
-//     components: { Slider },
-//     setup() {
         const route = useRoute();
         const router = useRouter();
         const store = useStore();
@@ -272,21 +246,6 @@ const wishlist = reactive(new Set());
         onMounted(() => {
             fetchProducts()
         });
-//         return {
-//             getImageUrl,
-//             products,
-//             loading,
-//             handleAddToCart,
-//             detailProduct,
-//             toggleDescription,
-//             isExpanded,
-//             maxPrice,
-//             minPrice,
-//             priceRange,
-//             getSelectedRange
-//         }
-//     }
-// }
 </script>
 
 <style scoped>

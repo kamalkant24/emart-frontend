@@ -52,6 +52,12 @@ const websiteRoute = [
         props: true,
         component: () => import('@/pages/website/products/ProductDetails.vue'),
     },
+    {
+        path: '/privacy-policy',
+        name: 'PrivacyPolicy',
+        component: () => import('@/pages/website/ligel/PrivacyPolicy.vue'),
+    }
+      
   
 ]
 export default websiteRoute;

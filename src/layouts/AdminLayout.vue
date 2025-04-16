@@ -6,7 +6,7 @@
       <div class="container-fluid mt-4">
         <slot></slot> 
       </div>
-      <Footer />
+      <!-- <Footer /> -->
     </div>
   </div>
 </template>
@@ -14,7 +14,7 @@
 <script setup>
 import Sidebar from "@/components/admin/Sidebar.vue";
 import Navbar from "@/components/admin/Navbar.vue";
-import Footer from "@/components/admin/Footer.vue";
+// import Footer from "@/components/admin/Footer.vue";
 </script>
 
 <style scoped>
